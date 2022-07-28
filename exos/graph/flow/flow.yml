@@ -1,0 +1,10 @@
+subject:
+  - graph
+ds:
+  - graph
+class:
+  - mp2i
+  - mp
+difficulty: 7
+language:
+  - ocaml

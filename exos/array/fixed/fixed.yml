@@ -1,0 +1,12 @@
+subject:
+  - array
+  - sort
+ds:
+  - array
+algorithm:
+  - dichotomy
+class:
+  - mp2i
+difficulty: 7
+language:
+  - c

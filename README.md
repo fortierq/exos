@@ -1,2 +1,0 @@
-# exos
-Exercices d'informatique
