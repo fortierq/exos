@@ -6,7 +6,7 @@ ds:
   - array
 algorithm:
   - dichotomy
-class:
+classe:
   - mp2i
 difficulty: 7
 language:
