@@ -2,7 +2,7 @@ from pathlib import Path
 
 import yaml
 
-dir_ex = Path(__file__).parents[1].resolve() / "exos"
+dir_ex = Path(__file__).parents.resolve() / "exos"
 file_output = Path("cpge-exos-app/db/exos.sql")
 
 attributes = { s: set() for s in ["subject", "ds", "language", "algorithm", "classe"] }
