@@ -1,0 +1,33 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yaml
+      - name: Create .sql
+        run: |
+          REPO=cpge-exos-app
+          TOKEN=${{ secrets.API_TOKEN_GITHUB }}
+          git clone "https://fortierq:$TOKEN@github.com/fortierq/$REPO
+
+          python ex_to_db.py
+
+          cd $REPO
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Update database"
+          git push "https://fortierq:$TOKEN@github.com/fortierq/$REPO.git" --set-upstream main
